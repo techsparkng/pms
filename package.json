@@ -1,0 +1,28 @@
+{
+  "name": "pms",
+  "version": "1.0.0",
+  "description": "Prison Management System",
+  "main": "app.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techsparkng/pms.git"
+  },
+  "author": "Techspark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techsparkng/pms/issues"
+  },
+  "homepage": "https://github.com/techsparkng/pms#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.5"
+  }
+}
