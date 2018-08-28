@@ -27,52 +27,52 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo">
-        <a href="#" class="simple-text logo-normal">
-          Prison Management
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="#0">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="inmate">
-              <i class="material-icons">person_add</i>
-              <p>Add Prisoner</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">
-              <i class="material-icons">content_paste</i>
-              <p>View Prisoners</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">
-              <i class="material-icons">table_chart</i>
-              <p>Cell Management</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <!-- your sidebar here -->
-        </ul>
-      </div>
+        <div class="logo">
+          <a href="#" class="simple-text logo-normal">
+            Prison Management
+          </a>
+        </div>
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li class="nav-item active  ">
+              <a class="nav-link" href="#0">
+                <i class="material-icons">dashboard</i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inmate">
+                <i class="material-icons">person_add</i>
+                <p>Add Prisoner</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">
+                <i class="material-icons">content_paste</i>
+                <p>View Prisoners</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">
+                <i class="material-icons">table_chart</i>
+                <p>Cell Management</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="./map.html">
+                <i class="material-icons">location_ons</i>
+                <p>Maps</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="./notifications.html">
+                <i class="material-icons">notifications</i>
+                <p>Notifications</p>
+              </a>
+            </li>
+            <!-- your sidebar here -->
+          </ul>
+        </div>
     </div>
     <div class="main-panel">
       <!-- Navbar -->
@@ -277,68 +277,25 @@
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
                     <thead class="text-warning">
-                      <th>ID</th>
+                      <th>Charge Number</th>
                       <th>Name</th>
-                      <th>Salary</th>
-                      <th>Country</th>
+                      <th>Next Adjourned</th>
+                      <th>Offence</th>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
+                      <% inmates.reverse().forEach(function(inmate){ %>
+                        <tr>
+                        <td><%=inmate.charge_num %></td>
+                        <td><%=inmate.firstname %> <%=inmate.lastname %></td>
+                        <td><%=inmate.nad %></td>
+                        <td><%=inmate.offence %></td>
                         <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                            <i class="material-icons">edit</i>
-                          </button>
-                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                            <i class="material-icons">close</i>
+                          <button type="button" rel="tooltip" title="View Inmate" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">remove_red_eye</i>
                           </button>
                         </td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                            <i class="material-icons">edit</i>
-                          </button>
-                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                            <i class="material-icons">close</i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                            <i class="material-icons">edit</i>
-                          </button>
-                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                            <i class="material-icons">close</i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                            <i class="material-icons">edit</i>
-                          </button>
-                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                            <i class="material-icons">close</i>
-                          </button>
-                        </td>
-                      </tr>
+                      <%});%>
                     </tbody>
                   </table>
                 </div>
@@ -353,8 +310,7 @@
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
-                    <thead class="text-warning">
-                      <th>ID</th>
+                    <thead class="text-warning"
                       <th>Name</th>
                       <th>Salary</th>
                       <th>Country</th>

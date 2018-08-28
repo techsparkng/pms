@@ -21,17 +21,44 @@ app.use(bodyParser.urlencoded({
 
 // Dasboard Route 
 app.get('/', function (req, res) {
-	res.render("dashboard");
+	console.log('Getting all Inmates');
+	Inmate.find({}, function (err, inmates) {
+		if (err) {
+			res.send('error has occured');
+		} else {
+			console.log(inmates);
+			// res.json(inmates);
+			res.render("dashboard", {
+				inmates: inmates
+			});
+		}
+	});
 });
+
+// //This is getting all inmates from db
+// app.get('/inmates', function (req, res) {
+// 	console.log('Getting all Inmates');
+// 	Inmate.find({}, function (err, inmates) {
+// 		if (err) {
+// 			res.send('error has occured');
+// 		} else {
+// 			console.log(inmates);
+// 			// res.json(inmates);
+// 			res.render("dashboard", {
+// 				inmates: inmates
+// 			});
+// 		}
+// 	});
+// });
 
 //inmate Route 
 app.get('/inmate', function (req, res) {
 	res.render("inmate");
 });
 
+//saving to database
 app.post('/saveinmates', function (req, res) {
 	newInmate = new Inmate();
-
 	newInmate.id_num = req.body.id_num;
 	newInmate.charge_num = req.body.charge_num;
 	newInmate.firstname = req.body.firstname;
@@ -49,7 +76,7 @@ app.post('/saveinmates', function (req, res) {
 			res.send('error while saving');
 		} else {
 			console.log(createdinmate);
-			res.send(createdinmate);
+			res.redirect("/");
 		}
 	});
 });
