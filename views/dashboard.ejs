@@ -280,7 +280,7 @@
                       <th>Charge Number</th>
                       <th>Name</th>
                       <th>Next Adjourned</th>
-                      <th>Offence</th>
+                      <th>Court</th>
                     </thead>
                     <tbody>
                       <% inmates.reverse().forEach(function(inmate){ %>
@@ -288,7 +288,7 @@
                         <td><%=inmate.charge_num %></td>
                         <td><%=inmate.firstname %> <%=inmate.lastname %></td>
                         <td><%=inmate.nad %></td>
-                        <td><%=inmate.offence %></td>
+                        <td><%=inmate.court %></td>
                         <td class="td-actions text-right">
                           <button type="button" rel="tooltip" title="View Inmate" class="btn btn-primary btn-link btn-sm">
                             <i class="material-icons">remove_red_eye</i>
